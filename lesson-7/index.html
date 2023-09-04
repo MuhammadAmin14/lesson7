@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE APP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container py-3">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Search..."
+        />
+        <select
+          class="form-select"
+          style="max-width: 150px !important"
+          name="filter"
+          id="filter"
+        >
+          <option value="all">All</option>
+          <option value="JAVA SKRIPT">JAVA SCRIPT</option>
+          <option value="PYTHON">PYTHON</option>
+          <option value="REACT">REACT</option>
+        </select>
+        <button
+          class="btn btn-success"
+          id="btn-add"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Add Programming Students
+        </button>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Group</th>
+            <th scope="col">Does hobby?</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="students-data"></tbody>
+      </table>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Add Programming STUDENT
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="student-form">
+                <label class="form-label" for="firstName">Firstname</label>
+                <input
+                  class="form-control mb-3"
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                />
+                <label class="form-label" for="lastName">Lastname</label>
+                <input
+                  class="form-control mb-3"
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                />
+                <select
+                  class="form-select mb-3"
+                  style="max-width: 150px !important"
+                  name="group"
+                  id="group"
+                >
+                  <option value="JAVA SKRIPT">JAVA SCRIPT</option>
+                  <option value="PYTHON">PYTHON</option>
+                  <option value="REACT">REACT</option>
+                </select>
+                <input type="checkbox" id="doesWork" name="doesWork" />
+                <label for="doesWork">DOES HOBBY?</label>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                id="btn-save"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
